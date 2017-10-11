@@ -1,11 +1,20 @@
 // JavaScript Document
+
+function checkbounds(bounds){
+	"use strict";
+	bounds.forEach(function(bound){
+		bound.onmouseover = function(){
+			bound.setAttribute("class","boundary youlose");
+		};
+	});
+	
+	
+}
+
 function init(){
 	"use strict";
-	var x = document.getElementById("boundary1");
-	x.onmouseover = function(){
-		x.setAttribute("class","boundary youlose");
-	};
-	
+	var boundary = document.querySelectorAll(".boundary");
+	checkbounds(boundary);
 }
 
 window.addEventListener("load",init);
