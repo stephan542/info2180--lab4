@@ -1,5 +1,5 @@
 // JavaScript Document
-var hitwall = false;
+var hitwall = true;
 
 function checkbounds(bounds){
 	"use strict";
@@ -23,8 +23,11 @@ function init(){
 	"use strict";
 	var boundary = document.querySelectorAll(".boundary");
 	checkbounds(boundary);
+	var start = document.getElementById("start");
+	start.onclick = function(){hitwall=false;};
 	var finish = document.getElementById("end");
 	finish.onmouseover = function(){if(hitwall === false){alert("You Win");}};
+	
 }
 
 window.addEventListener("load",init);
